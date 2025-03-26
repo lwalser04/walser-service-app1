@@ -1,11 +1,13 @@
+import { Stack } from "expo-router";
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, Image, TouchableOpacity, Alert, TextInput } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import logo from '../../assets/images/Walser-Box-Logo-1500x632.jpg';
+import logo from '../assets/images/Walser-Box-Logo-1500x632.jpg';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase'; // adjust path if needed
 
-export default function AccountsScreen({navigation}){
+export default function App({}){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
@@ -55,15 +57,15 @@ export default function AccountsScreen({navigation}){
     </View>
                   <View style = {styles.bottomBox}>
           
-                     <TouchableOpacity onPress = {() => navigation.navigate("Home")}>
+                     <TouchableOpacity onPress = {() => handlePress("Home")}>
                         <Ionicons style = {styles.bottomIcons} name = 'home' size = {30} color = "white"></Ionicons>
                      </TouchableOpacity>
                       
-                    <TouchableOpacity onPress = {() => navigation.navigate("Search")}>
+                    <TouchableOpacity onPress = {() => handlePress("Search")}>
                          <Ionicons style = {styles.bottomIcons} name = 'search-sharp' size = {30} color = "white"></Ionicons>
                     </TouchableOpacity>
                       
-                    <TouchableOpacity onPress = {() => navigation.navigate("Accounts")}>
+                    <TouchableOpacity onPress = {() => handlePress("Accounts")}>
                         <Ionicons style = {styles.bottomIcons} name = 'person-sharp' size = {30} color = "white"></Ionicons>
                     </TouchableOpacity>
           
